@@ -7,44 +7,11 @@
 <body>
 
 <div>
-  <script>
-    window.addEventListener('message', function (e) {
-      if (e.origin != "https://experts.ai") return;
-      document.getElementById('expertsAiWidget').style.height = e.data + 'px';
-    }, false);
-
-    window.addEventListener('message', function (e) {
-      if (e.origin !== "https://experts.ai") return;
-      var data = e.data;
-      if (typeof (window[data.function]) == "function") {
-        window[data.function].call();
-      }
-    }, false);
-
-    function scrollUp() {
-      var scrollDiv = document.getElementById("expertsWidget").offsetTop; // you may need to subtract header's offsetTop
-      window.scrollTo({top: scrollDiv, behavior: 'smooth'});
-    }
-
-  </script>
+  <script src="https://raw.githubusercontent.com/ninz9/unicoJslib/main/script1.js"></script>
   <iframe src="https://dev.experts.ai/widgets/organizations/146863?experts=true&projects=true&items=true&commercialization=true&organizationChildren=true" width="100%" height="1000px" allowFullScreen id="expertsAiWidget"></iframe>
-  <script>
-    const thisPageUrl = new URL(document.location.protocol + document.location.host + document.location.pathname);
-    console.log(thisPageUrl.toString());
-    const searchParam = new URLSearchParams(document.location.search);
 
-    if (searchParam.has('widget')) {
-      const path = searchParam.get('widget');
-      const url = new URL(path);
-      url.searchParams.append('base_url', thisPageUrl.toString());
-      document.getElementById('expertsAiWidget').src = url;
-    } else {
-      const url = new URL(document.getElementById('expertsAiWidget').src);
-      url.searchParams.append('base_url', thisPageUrl.toString());
-      document.getElementById('expertsAiWidget').src = url;
-    }
-    console.log("included");
-  </script>
+  <script src="https://raw.githubusercontent.com/ninz9/unicoJslib/main/script2.js"></script>
+
 </div>
 </body>
 </html>
